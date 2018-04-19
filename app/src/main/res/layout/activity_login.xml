@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textCapWords"
                     android:textColor="#fff"
-                    android:hint="Mobile Code" />
+                    android:hint="Enter Mobile Code"/>
             </android.support.design.widget.TextInputLayout>
 
 
