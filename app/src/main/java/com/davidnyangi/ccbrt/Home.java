@@ -3,9 +3,17 @@ package com.davidnyangi.ccbrt;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.davidnyangi.ccbrt.Fragments.Activity;
@@ -24,9 +32,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Home extends AppCompatActivity {
-    @Bind(R.id.bottomBar) BottomBar bottomBar;
-    @Bind(R.id.title)  TextView title;
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    BottomBar bottomBar;
+    TextView title;
 
     FragNavController fragNavController;
 
@@ -35,13 +43,23 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
+//        title = (TextView) findViewById(R.id.title);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-            title.setText(getSupportActionBar().getTitle());
-            getSupportActionBar().setTitle("");
+//            title.setText(getSupportActionBar().getTitle());
+//            getSupportActionBar().setTitle("");
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        bottomBar = (BottomBar)findViewById(R.id.bottomBar);
 
         List<Fragment> fragments = new ArrayList<>(5);
 
@@ -66,8 +84,8 @@ public class Home extends AppCompatActivity {
                 }else if(tabId == R.id.tab_diary){
                     fragNavController.switchTab(fragNavController.TAB4);
                 }else if(tabId == R.id.tab_places){
-                    Intent intent = new Intent(Home.this, Locations.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(Home.this, Locations.class);
+//                    startActivity(intent);
                     //fragNavController.switchTab(fragNavController.TAB5);
                 }
             }
@@ -80,5 +98,28 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_detail_news, menu);
+//        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+//        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        return true;
+    }
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+
+        int id = item.getItemId();
+
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

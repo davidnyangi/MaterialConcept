@@ -3,24 +3,24 @@
     <tab
         id="@+id/tab_activity"
         icon="@drawable/ic_event_note_black_24dp"
-        title="Actividad"/>
+        title="Home"/>
 
     <tab
         id="@+id/tab_news"
         icon="@drawable/ic_chrome_reader_mode_black_24dp"
-        title="Noticias"/>
+        title="Blog"/>
     <tab
         id="@+id/tab_people"
         icon="@drawable/ic_group_black_24dp"
-        title="Comunidad"/>
+        title="Team"/>
     <tab
         id="@+id/tab_diary"
         icon="@drawable/ic_class_black_24dp"
-        title="Agenda"/>
+        title="Contacts"/>
     <tab
         id="@+id/tab_places"
         icon="@drawable/ic_pin_drop_black_24dp"
-        title="Lugares"/>
+        title="SMS"/>
 
     <!--
         barColorWhenSelected="#FF5381"
