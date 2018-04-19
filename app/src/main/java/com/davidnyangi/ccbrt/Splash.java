@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -71,7 +70,7 @@ public class Splash extends Activity {
 
                 // Start the next activity
                 Intent mainIntent = new Intent().setClass(
-                        Splash.this, Login.class);
+                        Splash.this, Welcome.class);
                 startActivity(mainIntent);
 
                 // Close the activity so the user won't able to go back this

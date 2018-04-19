@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+android:background="#262F864E"
+    android:orientation="vertical"
+    tools:context="com.davidnyangi.ccbrt.Welcome">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/child"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="26dp"
+            android:focusableInTouchMode="true"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="26dp"
+
+                android:focusableInTouchMode="true"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="28dp"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="CCBRT - Get to Know About Us"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="26dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+                <TextView
+                    android:id="@+id/link_reset_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ghostWhite"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="60dp"
+                    android:textSize="17dp"
+                    android:text="Choose Language"/>
+
+                <Spinner
+                    android:id="@+id/spinnerLang"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:dropDownVerticalOffset="-53dp"
+                    android:layout_marginTop="60dp"
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:spinnerMode="dropdown"
+                    android:drawSelectorOnTop="true"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:padding="12dp"
+                    android:backgroundTint="#2F864E"
+                    android:background="#2F864E"
+                    android:textColor="@color/ghostWhite"
+                    android:text="Continue to Homepage"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/link_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Are you a CCBRT member? Tap Here"
+        android:gravity="center"
+        android:textColor="@color/ghostWhite"
+        android:layout_alignParentBottom="true"
+        android:background="#59ADC046"
+        android:textSize="16dip"/>
+
+</RelativeLayout>

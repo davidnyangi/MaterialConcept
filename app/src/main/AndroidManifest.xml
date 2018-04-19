@@ -27,10 +27,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.davidnyangi.ccbrt.Login"
+            android:name="com.davidnyangi.ccbrt.Welcome"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.davidnyangi.ccbrt.Signup"
+            android:name="com.davidnyangi.ccbrt.Login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.davidnyangi.ccbrt.ResetPassword"

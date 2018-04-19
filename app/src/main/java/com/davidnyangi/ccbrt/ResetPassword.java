@@ -28,7 +28,7 @@ public class ResetPassword extends AppCompatActivity {
         linkCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ResetPassword.this, Login.class);
+                Intent intent = new Intent(ResetPassword.this, Welcome.class);
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
