@@ -1,7 +1,7 @@
 <tabs>
 
     <tab
-        id="@+id/tab_activity"
+        id="@+id/tab_home"
         icon="@drawable/ic_event_note_black_24dp"
         title="Home"/>
 
@@ -18,8 +18,8 @@
         icon="@drawable/ic_class_black_24dp"
         title="Contacts"/>
     <tab
-        id="@+id/tab_places"
-        icon="@drawable/ic_pin_drop_black_24dp"
+        id="@+id/tab_notifications"
+        icon="@drawable/ic_message_black_24dp"
         title="SMS"/>
 
     <!--
