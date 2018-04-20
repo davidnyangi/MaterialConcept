@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_camer"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="History" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="Careers" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="Services" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/cast_ic_mini_controller_play"
+            android:title="Send Suggestions" />
+    </group>
+
+    <item android:title="Administration">
+        <menu>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/cast_ic_mini_controller_play"
+                android:title="Help" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/cast_ic_mini_controller_play"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
