@@ -1,13 +1,10 @@
 package com.davidnyangi.ccbrt;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,18 +15,19 @@ import android.widget.TextView;
 
 import com.davidnyangi.ccbrt.Fragments.Activity;
 import com.davidnyangi.ccbrt.Fragments.Diary;
+import com.davidnyangi.ccbrt.Fragments.Homepage;
 import com.davidnyangi.ccbrt.Fragments.News;
 import com.davidnyangi.ccbrt.Fragments.People;
 import com.davidnyangi.ccbrt.Fragments.Places;
 import com.ncapdevi.fragnav.FragNavController;
 import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -68,22 +66,24 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         fragments.add(People.newInstance("PARAM3"));
         fragments.add(Diary.newInstance("PARAM4"));
         fragments.add(Places.newInstance("PARAM5"));
-
+        bottomBar.setDefaultTab(R.id.tab_home);
         fragNavController = new FragNavController(getSupportFragmentManager(), R.id.container,fragments);
-
+        BottomBarTab nearby = bottomBar.getTabWithId(R.id.tab_notifications);
+        nearby.setBadgeCount(5);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
 
-                if (tabId == R.id.tab_activity) {
-                    fragNavController.switchTab(fragNavController.TAB1);
+                if (tabId == R.id.tab_home) {
+                    Homepage homeFragment = new Homepage();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
                 }else if (tabId == R.id.tab_news) {
-                    fragNavController.switchTab(fragNavController.TAB2);
+                   // fragNavController.switchTab(fragNavController.TAB1);
                 }else if(tabId == R.id.tab_people){
-                    fragNavController.switchTab(fragNavController.TAB3);
+                   // fragNavController.switchTab(fragNavController.TAB3);
                 }else if(tabId == R.id.tab_diary){
-                    fragNavController.switchTab(fragNavController.TAB4);
-                }else if(tabId == R.id.tab_places){
+                  //  fragNavController.switchTab(fragNavController.TAB4);
+                }else if(tabId == R.id.tab_notifications){
 //                    Intent intent = new Intent(Home.this, Locations.class);
 //                    startActivity(intent);
                     //fragNavController.switchTab(fragNavController.TAB5);
@@ -99,6 +99,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
+
+
+// Remove the badge when you're done with it.
+       // nearby.removeBadge();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

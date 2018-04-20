@@ -6,35 +6,23 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.davidnyangi.ccbrt.Home"
-    xmlns:design="http://schemas.android.com/apk/res-auto"
     tools:showIn="@layout/app_bar_main">
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomBar"/>
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/activity_home"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginTop="?attr/actionBarSize"-->
-        <!--android:background="@color/background">-->
-
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/bottomBar"/>
-
-        <com.roughike.bottombar.BottomBar
-            android:id="@+id/bottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            app:bb_tabXmlResource="@xml/bottom_bar"
-            app:bb_inActiveTabAlpha="0.6"
-            app:bb_activeTabAlpha="1"
-            app:bb_inActiveTabColor="#d4535353"
-            app:bb_activeTabColor="@color/colorAccent"
-            app:bb_showShadow="false"/>
-
-    <!--</RelativeLayout>-->
-
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:bb_tabXmlResource="@xml/bottom_bar"
+        app:bb_inActiveTabAlpha="0.6"
+        app:bb_activeTabAlpha="1"
+        app:bb_inActiveTabColor="#d4535353"
+        app:bb_activeTabColor="@color/colorAccent"
+        app:bb_showShadow="false"/>
 </RelativeLayout>
