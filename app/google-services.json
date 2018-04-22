@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "953826732461",
+    "firebase_url": "https://ccbrt-cbbe2.firebaseio.com",
+    "project_id": "ccbrt-cbbe2",
+    "storage_bucket": "ccbrt-cbbe2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953826732461:android:fc2985919141e0d1",
+        "android_client_info": {
+          "package_name": "com.davidnyangi.ccbrt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953826732461-0eh19b0bj77l4s8604ei1lmukm0u1js8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davidnyangi.ccbrt",
+            "certificate_hash": "931bbca029b17c7b64013f4fc19846ca7855732b"
+          }
+        },
+        {
+          "client_id": "953826732461-6oj3r3be9ct8u38lln2facp3l7st5fla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs26nnGpvWxPX1OegJ-G3jkV2hOsoaOF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953826732461-6oj3r3be9ct8u38lln2facp3l7st5fla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
