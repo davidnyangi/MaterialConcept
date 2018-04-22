@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context="com.davidnyangi.ccbrt.Fragments.SMS">
+
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent"
+            tools:context="com.davidnyangi.ccbrt.Fragments.SMS">
+
+        <!--<EditText-->
+        <!--android:id="@+id/editTextTitle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:textColorHighlight="@color/colorPrimary"-->
+        <!--android:hint="Enter Message Title" />-->
+
+    <Spinner
+        android:id="@+id/spinnerDevices"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:drawSelectorOnTop="true"
+        android:dropDownVerticalOffset="-53dp"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:spinnerMode="dropdown" />
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                android:hint="Enter Message Title" />
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Message" />
+
+            <EditText
+                android:id="@+id/editTextImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Image URL (Optional) " />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="#fff"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonSendAll"
+            android:layout_width="wrap_content"
+            android:textColor="#fff"
+            android:layout_height="wrap_content"
+            android:text="Send to All" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSendOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="Send to One" />
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/buttonSendPush"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextImageUrl"
+        android:layout_marginTop="112dp"
+        android:text="Send Push" />
+
+
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

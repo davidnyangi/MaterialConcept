@@ -1,5 +1,6 @@
 package com.davidnyangi.ccbrt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.NavigationView;
@@ -19,6 +20,7 @@ import com.davidnyangi.ccbrt.Fragments.Homepage;
 import com.davidnyangi.ccbrt.Fragments.News;
 import com.davidnyangi.ccbrt.Fragments.People;
 import com.davidnyangi.ccbrt.Fragments.Places;
+import com.davidnyangi.ccbrt.Fragments.SMS;
 import com.ncapdevi.fragnav.FragNavController;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -84,9 +86,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 }else if(tabId == R.id.tab_diary){
                   //  fragNavController.switchTab(fragNavController.TAB4);
                 }else if(tabId == R.id.tab_notifications){
-//                    Intent intent = new Intent(Home.this, Locations.class);
-//                    startActivity(intent);
-                    //fragNavController.switchTab(fragNavController.TAB5);
+                    SMS smsFragment = new SMS();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,smsFragment).commit();
                 }
             }
         });
@@ -119,8 +120,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-
-
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(Home.this, Welcome.class);
+            startActivity(intent);
+            finish();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
