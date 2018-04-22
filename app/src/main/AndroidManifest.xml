@@ -35,7 +35,7 @@
         <activity
             android:name="com.davidnyangi.ccbrt.ResetPassword"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.davidnyangi.ccbrt.Home" />
+        <activity android:name="com.davidnyangi.ccbrt.Home"  android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.davidnyangi.ccbrt.DetailNews"
             android:label=""

@@ -9,7 +9,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     tools:context="com.davidnyangi.ccbrt.Login">
-    <ImageView
+    <com.flaviofaria.kenburnsview.KenBurnsView
         android:id="@+id/image"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -43,6 +43,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:src="@mipmap/logo"
+                android:contentDescription="CCBRT Logo"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/imageView2" />
 
@@ -63,44 +64,61 @@
             </android.support.design.widget.TextInputLayout>
 
 
-            <android.support.v7.widget.AppCompatButton
+            <Button
                 android:id="@+id/btn_login"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:padding="12dp"
+                android:textSize="13sp"
                 android:textColor="#fff"
-                android:background="#2F864E"
-                android:backgroundTint="#2F864E"
                 android:text="Login"/>
-            <Button
-                android:layout_centerVertical="true"
-                android:text="Display Token"
-                android:id="@+id/buttonDisplayToken"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <!--<Button-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Display Token"-->
+                <!--android:id="@+id/buttonDisplayToken"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
 
-            <TextView
-                android:id="@+id/textViewToken"
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <!--<TextView-->
+                <!--android:id="@+id/textViewToken"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
 
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/link_login"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:text="Go Back"
-        android:gravity="center"
-        android:textColor="@color/ghostWhite"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="#80ADC046"
         android:layout_alignParentBottom="true"
-        android:background="#59000000"
-        android:textSize="16dip"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/link_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="@string/Back"
+            android:gravity="center"
+            android:textColor="@color/ghostWhite"
+            android:textSize="16dip"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/guest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/continue_as_guest"
+            android:textColor="@color/ghostWhite"
+            android:textSize="16dip" />
 
+    </LinearLayout>
 </RelativeLayout>

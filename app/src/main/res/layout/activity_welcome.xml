@@ -8,11 +8,11 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-android:background="#262F864E"
+    android:background="#262F864E"
     android:orientation="vertical"
     tools:context="com.davidnyangi.ccbrt.Welcome">
 
-    <ImageView
+    <com.flaviofaria.kenburnsview.KenBurnsView
         android:id="@+id/image"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -30,10 +30,6 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
 
     String param;
     private SliderLayout mDemoSlider;
-    private static final String URL_PRODUCTS = "https://davidnyangiprojects.com/Projects/Android/Makazi/Api.php";
-
-
-
     public Homepage() {
     }
     public static Homepage newInstance(String... params) {
@@ -60,10 +56,10 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mDemoSlider = (SliderLayout) view.findViewById(R.id.slider);
         HashMap<String,String> url_maps = new HashMap<String, String>();
-        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
-        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
-        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/hdclearart-10.png");
+        url_maps.put("Changing Lives", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/d.jpg");
+        url_maps.put("Changing Communities", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/a.jpg");
+        url_maps.put("Access for All", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/c.jpg");
+        url_maps.put("Investing in Human Resources for Health ", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/b.jpg");
 
         for(String name : url_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(getActivity());

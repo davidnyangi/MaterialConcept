@@ -8,16 +8,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
+import com.flaviofaria.kenburnsview.Transition;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Splash extends Activity {
 
-    private static final long SPLASH_SCREEN_DELAY = 2500;
+    private static final long SPLASH_SCREEN_DELAY = 3000;
 
 
     /*private int[] images = {
@@ -46,23 +53,20 @@ public class Splash extends Activity {
             decorView.setSystemUiVisibility(uiOptions);
         }
 
-//        ImageView myImageView= (ImageView)findViewById(R.id.logo);
-//        Animation myFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom_out);
-//        myImageView.startAnimation(myFadeInAnimation);
-//        TextView karibu = (TextView)findViewById(R.id.karibu);
-//        Animation myFadeInAnimation2 = AnimationUtils.loadAnimation(this, R.anim.fadein);
-//        myImageView.startAnimation(myFadeInAnimation2);
-//        kenBurnsView = (KenBurnsView) findViewById(R.id.image);
-        //Random rand = new Random();
+        ImageView myImageView= (ImageView)findViewById(R.id.logo_img);
+        Animation myFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_top);
+        myImageView.startAnimation(myFadeInAnimation);
+        TextView karibu = (TextView)findViewById(R.id.logo_txt);
+        Animation myFadeInAnimation2 = AnimationUtils.loadAnimation(this, R.anim.slide_top);
+        karibu.startAnimation(myFadeInAnimation2);
 
-        //int image = rand.nextInt((3) + 1);
-
-        ImageView imgSplash = (ImageView) findViewById(R.id.imageSplash);
-        Glide.with(this)
-                .load(R.drawable.logo)
-                .asGif()
-                .crossFade()
-                .into(imgSplash);
+//
+//        ImageView imgSplash = (ImageView) findViewById(R.id.splash_background);
+//        Glide.with(this)
+//                .load(R.drawable.logo)
+//                .asGif()
+//                .crossFade()
+//                .into(imgSplash);
 
         TimerTask task = new TimerTask() {
             @Override

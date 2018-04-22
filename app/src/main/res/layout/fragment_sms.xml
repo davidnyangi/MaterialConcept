@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:drawSelectorOnTop="true"
         android:dropDownVerticalOffset="-53dp"
         android:foregroundGravity="center_horizontal"
@@ -64,7 +64,7 @@
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:textColor="#fff"
         android:layout_height="wrap_content">
 
@@ -90,8 +90,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextImageUrl"
-        android:layout_marginTop="112dp"
-        android:text="Send Push" />
+        android:layout_marginTop="4dp"
+        android:text="Send Message" />
 
 
 </LinearLayout>

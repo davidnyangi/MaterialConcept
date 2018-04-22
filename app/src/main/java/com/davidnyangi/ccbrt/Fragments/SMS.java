@@ -96,7 +96,7 @@ public class SMS extends Fragment implements RadioGroup.OnCheckedChangeListener,
     //method to load all the devices from database
     private void loadRegisteredDevices() {
         progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Fetching Devices...");
+        progressDialog.setMessage("Fetching Users...");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, EndPoints.URL_FETCH_DEVICES,
@@ -155,7 +155,7 @@ public class SMS extends Fragment implements RadioGroup.OnCheckedChangeListener,
         final String message = editTextMessage.getText().toString();
         final String image = editTextImage.getText().toString();
 
-        progressDialog.setMessage("Sending Push");
+        progressDialog.setMessage("Sending Message...");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, EndPoints.URL_SEND_MULTIPLE_PUSH,
@@ -194,7 +194,7 @@ public class SMS extends Fragment implements RadioGroup.OnCheckedChangeListener,
         final String image = editTextImage.getText().toString();
         final String email = spinner.getSelectedItem().toString();
 
-        progressDialog.setMessage("Sending Push");
+        progressDialog.setMessage("Sending Message...");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, EndPoints.URL_SEND_SINGLE_PUSH,
@@ -203,7 +203,7 @@ public class SMS extends Fragment implements RadioGroup.OnCheckedChangeListener,
                     public void onResponse(String response) {
                         progressDialog.dismiss();
 
-                        Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Successfully Sent", Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {

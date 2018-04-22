@@ -35,13 +35,14 @@ import butterknife.ButterKnife;
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     BottomBar bottomBar;
     TextView title;
-
+    SessionManager session;
     FragNavController fragNavController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        session = new SessionManager(getApplicationContext());
         ButterKnife.bind(this);
 //        title = (TextView) findViewById(R.id.title);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -112,6 +113,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 //        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
 //        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
 //        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
         return true;
     }
     @SuppressWarnings("StatementWithEmptyBody")
@@ -120,14 +122,31 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(Home.this, Welcome.class);
-            startActivity(intent);
-            finish();
-        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        if (id == R.id.action_logout) {
+            session.logoutUser();
+            Intent i = new Intent(Home.this, Login.class);
+            startActivity(i);
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
 
     @Bind(R.id.mobile_code) TextInputLayout mPhoneCode;
     @Bind(R.id.link_login) TextView linkLogin;
-    @Bind(R.id.btn_login) AppCompatButton btnLogin;
+    @Bind(R.id.btn_login) Button btnLogin;
     private Button buttonDisplayToken;
     private TextView textViewToken;
     private ProgressDialog progressDialog;
@@ -48,29 +48,29 @@ public class Login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        textViewToken = (TextView) findViewById(R.id.textViewToken);
-        buttonDisplayToken = (Button) findViewById(R.id.buttonDisplayToken);
+      //  textViewToken = (TextView) findViewById(R.id.textViewToken);
+//        buttonDisplayToken = (Button) findViewById(R.id.buttonDisplayToken);
 
         //adding listener to view
-        buttonDisplayToken.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  if (v == buttonDisplayToken) {
-                      //getting token from shared preferences
-                      FirebaseMessaging.getInstance().subscribeToTopic("Hithere");
-                      String token = FirebaseInstanceId.getInstance().getToken();
-
-                      //if token is not null
-                      if (token != null) {
-                          //displaying the token
-                          textViewToken.setText(token);
-                      } else {
-                          //if token is null that means something wrong
-                          textViewToken.setText("Token not generated");
-                      }
-                  }
-              }
-          });
+//        buttonDisplayToken.setOnClickListener(new View.OnClickListener() {
+//              @Override
+//              public void onClick(View v) {
+//                  if (v == buttonDisplayToken) {
+//                      //getting token from shared preferences
+//                      FirebaseMessaging.getInstance().subscribeToTopic("Hithere");
+//                      String token = FirebaseInstanceId.getInstance().getToken();
+//
+//                      //if token is not null
+//                      if (token != null) {
+//                          //displaying the token
+//                          textViewToken.setText(token);
+//                      } else {
+//                          //if token is null that means something wrong
+//                          textViewToken.setText("Token not generated");
+//                      }
+//                  }
+//              }
+//          });
                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
     //storing token to mysql server
     private void sendTokenToServer() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Registering Device...");
+        progressDialog.setMessage("Loading...");
         progressDialog.show();
         progressDialog.setCancelable(true);
         FirebaseMessaging.getInstance().subscribeToTopic("Hithere");

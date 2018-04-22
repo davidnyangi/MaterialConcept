@@ -7,9 +7,14 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
+import com.flaviofaria.kenburnsview.Transition;
 
 import java.util.ArrayList;
 
@@ -29,7 +34,21 @@ public class Welcome extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_welcome);
         ButterKnife.bind(this);
+        KenBurnsView kbv = (KenBurnsView) findViewById(R.id.image);
+        kbv.setTransitionListener(new KenBurnsView.TransitionListener() {
+            @Override
+            public void onTransitionStart(Transition transition) {
 
+            }
+            @Override
+            public void onTransitionEnd(Transition transition) {
+
+            }
+        });
+        AccelerateDecelerateInterpolator ACCELERATE_DECELERATE = new AccelerateDecelerateInterpolator();
+        RandomTransitionGenerator generator = new RandomTransitionGenerator(10000, ACCELERATE_DECELERATE);
+        //duration = 10000ms = 10s and interpolator = ACCELERATE_DECELERATE
+        kbv.setTransitionGenerator(generator);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
