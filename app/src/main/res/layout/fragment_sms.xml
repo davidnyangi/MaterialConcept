@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
     android:layout_height="match_parent"
     tools:context="com.davidnyangi.ccbrt.Fragments.SMS">
 
@@ -18,7 +17,6 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
             android:layout_height="match_parent"
             tools:context="com.davidnyangi.ccbrt.Fragments.SMS">
 
@@ -35,8 +33,11 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:foregroundTint="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         android:drawSelectorOnTop="true"
         android:dropDownVerticalOffset="-53dp"
         android:foregroundGravity="center_horizontal"
@@ -45,41 +46,50 @@
             <EditText
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
-                android:textColor="#fff"
+                android:textColor="@color/colorPrimary"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:hint="Enter Message Title" />
 
             <EditText
                 android:id="@+id/editTextMessage"
-                android:textColor="#fff"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/colorPrimary"
+                android:backgroundTint="@color/colorAccent"
                 android:hint="Enter Message" />
 
             <EditText
                 android:id="@+id/editTextImageUrl"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/colorAccent"
+                android:textColorHint="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:hint="Enter Image URL (Optional) " />
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="#fff"
+        android:textColor="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/radioButtonSendAll"
             android:layout_width="wrap_content"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:text="Send to All" />
 
         <RadioButton
             android:id="@+id/radioButtonSendOne"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimary"
             android:text="Send to One" />
 
     </RadioGroup>
@@ -88,6 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:textColor="#fff"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextImageUrl"
         android:layout_marginTop="4dp"
