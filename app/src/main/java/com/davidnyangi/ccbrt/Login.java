@@ -113,7 +113,7 @@ public class Login extends AppCompatActivity {
             return;
         }
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGISTER_DEVICE,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, EndPoints.URL_REGISTER_DEVICE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
