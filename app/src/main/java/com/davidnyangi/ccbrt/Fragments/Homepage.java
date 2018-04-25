@@ -47,7 +47,7 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
     private SliderLayout mDemoSlider;
     //Creating a List of superheroes
     private List<Services> listSuperHeroes;
-
+    ProgressBar progressBar;
     //Creating Views
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -113,8 +113,9 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
         mDemoSlider.addOnPageChangeListener(this);
 //Initializing Views
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar1);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
         //Initializing our superheroes list
@@ -125,8 +126,17 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
         getData();
 
         //Adding an scroll change listener to recyclerview
-        recyclerView.setOnScrollChangeListener(getActivity());
+        //recyclerView.setOnScrollChangeListener(getActivity());
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                                             @Override
+                                             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                                                 super.onScrollStateChanged(recyclerView, newState);
 
+                                                 //onScrollStateChanged will be fire every time you scroll
+                                                 //Perform your operation here
+
+                                             }
+                                         });
         //initializing our adapter
         adapter = new CardAdapter(listSuperHeroes, getActivity());
 
@@ -154,17 +164,19 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
     }
 
     @Override
-    public void onPageScrollStateChanged(int state) {}
+    public void onPageScrollStateChanged(int state) {
+
+    }
     //Request to get json from server we are passing an integer here
     //This integer will used to specify the page number for the request ?page = requestcount
     //This method would return a JsonArrayRequest that will be added to the request queue
     private JsonArrayRequest getDataFromServer(int requestCount) {
         //Initializing ProgressBar
-        final ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar1);
+
 
         //Displaying Progressbar
         progressBar.setVisibility(View.VISIBLE);
-        setProgressBarIndeterminateVisibility(true);
+      //  progressBar.setSupportProgressBarIndeterminateVisibility(true);
 
         //JsonArrayRequest of volley
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.DATA_URL + String.valueOf(requestCount),
@@ -182,7 +194,7 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
                     public void onErrorResponse(VolleyError error) {
                         progressBar.setVisibility(View.GONE);
                         //If an error occurs that means end of the list has reached
-                        Toast.makeText(MainActivity.this, "No More Items Available", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "No More Items Available", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -234,7 +246,7 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
     }
 
     //Overriden method to detect scrolling
-    @Override
+  //  @Override
     public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
         //Ifscrolled at last then
         if (isLastItemDisplaying(recyclerView)) {
