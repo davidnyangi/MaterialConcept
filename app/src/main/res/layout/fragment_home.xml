@@ -16,13 +16,13 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-android:textColorHighlight="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/round_corner"
-        android:textColorHint="@color/colorPrimary"
-        android:text="Our Services"
-        android:textColor="@color/colorPrimary" />
+        android:textColorHint="#fff"
+        android:text="Below are the services we offer"
+        android:textSize="17sp"
+        android:textColor="#fff" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylcerView"
         android:layout_width="match_parent"
