@@ -1,13 +1,17 @@
 package com.davidnyangi.ccbrt.Fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,9 +118,14 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
 //Initializing Views
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar1);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+       // recyclerView.setHasFixedSize(true);
+       // layoutManager = new LinearLayoutManager(getActivity());
+       // recyclerView.setLayoutManager(layoutManager);
 
         //Initializing our superheroes list
         listSuperHeroes = new ArrayList<>();
@@ -143,6 +152,18 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
         //Adding adapter to recyclerview
         recyclerView.setAdapter(adapter);
         return view;
+    }
+    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
+
+        private int spanCount;
+        private int spacing;
+        private boolean includeEdge;
+
+        public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
+            this.spanCount = spanCount;
+            this.spacing = spacing;
+            this.includeEdge = includeEdge;
+        }
     }
     @Override
     public void onStop() {
@@ -253,5 +274,9 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
             //Calling the method getdata again
             getData();
         }
+    }
+    private int dpToPx(int dp) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }
