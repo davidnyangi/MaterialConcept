@@ -7,13 +7,22 @@
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
         />
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/custom_indicator"
         style="@style/AndroidImageSlider_Corner_Oval_Orange"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+android:textColorHighlight="@color/colorPrimary"
+        android:background="@drawable/round_corner"
+        android:textColorHint="@color/colorPrimary"
+        android:text="Our Services"
+        android:textColor="@color/colorPrimary" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylcerView"
         android:layout_width="match_parent"

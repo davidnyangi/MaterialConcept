@@ -81,11 +81,13 @@
             android:id="@+id/radioButtonSendAll"
             android:layout_width="wrap_content"
             android:textColor="@color/colorPrimary"
+            android:buttonTint="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:text="Send to All" />
 
         <RadioButton
             android:id="@+id/radioButtonSendOne"
+            android:buttonTint="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:backgroundTint="@color/colorPrimary"
             android:layout_height="wrap_content"

@@ -114,7 +114,7 @@ public class SMS extends Fragment implements RadioGroup.OnCheckedChangeListener,
                                     JSONObject d = jsonDevices.getJSONObject(i);
                                     devices.add(d.getString("email"));
                                 }
-                                ArrayAdapter<String> langAdapter = new ArrayAdapter<String>(getActivity(),  R.layout.simple_spinner_item, devices );
+                                ArrayAdapter<String> langAdapter = new ArrayAdapter<String>(getActivity(),  R.layout.spinner_item, devices );
                                 langAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
                                 spinner.setAdapter(langAdapter);
 //                                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
