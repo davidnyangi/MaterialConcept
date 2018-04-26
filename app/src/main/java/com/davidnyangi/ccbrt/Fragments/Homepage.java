@@ -123,7 +123,7 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
        //recyclerView.setAdapter(adapter);
-       // recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
        // layoutManager = new LinearLayoutManager(getActivity());
        // recyclerView.setLayoutManager(layoutManager);
 
