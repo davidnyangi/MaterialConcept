@@ -143,6 +143,10 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
 
                                                  //onScrollStateChanged will be fire every time you scroll
                                                  //Perform your operation here
+                                                 if (isLastItemDisplaying(recyclerView)) {
+                                                     //Calling the method getdata again
+                                                     getData();
+                                                 }
 
                                              }
                                          });
