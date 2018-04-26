@@ -55,7 +55,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         //Loading image from url
         imageLoader = CustomVolleyRequest.getInstance(context).getImageLoader();
-        imageLoader.get(Services.getImageUrl(), ImageLoader.getImageListener(holder.imageView, R.drawable.logo, android.R.drawable.ic_dialog_alert));
+        imageLoader.get(Services.getImageUrl(), ImageLoader.getImageListener(holder.imageView, R.mipmap.logo, android.R.drawable.ic_dialog_alert));
 
         //Showing data on the views
         holder.imageView.setImageUrl(Services.getImageUrl(), imageLoader);

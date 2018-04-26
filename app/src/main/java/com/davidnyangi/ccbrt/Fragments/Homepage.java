@@ -219,7 +219,7 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
                     public void onErrorResponse(VolleyError error) {
                         progressBar.setVisibility(View.GONE);
                         //If an error occurs that means end of the list has reached
-                        Toast.makeText(getActivity(), "No More Items Available", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getActivity(), "No More Items Available", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -239,21 +239,21 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
     private void parseData(JSONArray array) {
         for (int i = 0; i < array.length(); i++) {
             //Creating the superhero object
-            Services superHero = new Services();
+            Services mServices = new Services();
             JSONObject json = null;
             try {
                 //Getting json
                 json = array.getJSONObject(i);
 
                 //Adding data to the superhero object
-                superHero.setImageUrl(json.getString(Config.TAG_IMAGE_URL));
-                superHero.setName(json.getString(Config.TAG_NAME));
-                superHero.setPublisher(json.getString(Config.TAG_PUBLISHER));
+                mServices.setImageUrl(json.getString(Config.TAG_IMAGE_URL));
+                mServices.setName(json.getString(Config.TAG_NAME));
+                mServices.setPublisher(json.getString(Config.TAG_PUBLISHER));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             //Adding the superhero object to the list
-            listSuperHeroes.add(superHero);
+            listSuperHeroes.add(mServices);
         }
 
         //Notifying the adapter that data has been added or changed
