@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="?attr/selectableItemBackground"
     android:layout_height="match_parent">
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/custom_indicator"
@@ -30,6 +31,7 @@
         android:textColor="#fff" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/services_label"
