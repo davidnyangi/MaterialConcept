@@ -6,6 +6,7 @@ package com.davidnyangi.ccbrt.Adapters;
 import android.content.Context;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         //Showing data on the views
         holder.imageView.setImageUrl(Services.getImageUrl(), imageLoader);
         holder.textViewName.setText(Services.getName());
+        holder.textViewName.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f);
         holder.textViewPublisher.setText(Services.getPublisher());
 
     }
