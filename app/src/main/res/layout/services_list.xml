@@ -15,7 +15,7 @@
         card_view:cardMaxElevation="6dp"
         card_view:cardBackgroundColor="#dedede"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="115dp"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
         <RelativeLayout
@@ -36,7 +36,7 @@
                                 android:textColorHint="#fff"
                                 android:background="#80000000"
                                 android:textColor="#fff"
-                                android:textSize="19dp"
+                                android:textSize="19sp"
                                 android:layout_alignLeft="@id/imageViewHero"
                                 android:layout_alignStart="@id/imageViewHero"
                                 android:layout_alignEnd="@id/imageViewHero"

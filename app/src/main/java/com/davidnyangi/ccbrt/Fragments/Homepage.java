@@ -1,6 +1,8 @@
 package com.davidnyangi.ccbrt.Fragments;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -87,28 +89,62 @@ public class Homepage extends Fragment implements BaseSliderView.OnSliderClickLi
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mDemoSlider = (SliderLayout) view.findViewById(R.id.slider);
-        HashMap<String,String> url_maps = new HashMap<String, String>();
-        url_maps.put("Changing Lives", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/d.jpg");
-        url_maps.put("Changing Communities", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/a.jpg");
-        url_maps.put("Access for All", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/c.jpg");
-        url_maps.put("Investing in Human Resources for Health ", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/b.jpg");
 
-        for(String name : url_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(getActivity());
-            // initialize a SliderLayout
-            textSliderView
-                    .description(name)
-                    .image(url_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.Fit)
-                    .setOnSliderClickListener(this);
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-            //add your extra information
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra",name);
+        boolean is3g = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
+        boolean isWifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
+        if (!is3g && !isWifi) {
+            HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+            file_maps.put("Changing Lives",R.drawable.a);
+            file_maps.put("Changing Communities",R.drawable.b);
+            file_maps.put("Access for All",R.drawable.c);
+            file_maps.put("Investing in Human Resources for Health", R.drawable.d);
 
-            mDemoSlider.addSlider(textSliderView);
+            for(String name : file_maps.keySet()){
+                TextSliderView textSliderView = new TextSliderView(getActivity());
+                // initialize a SliderLayout
+                textSliderView
+                        .description(name)
+                        .image(file_maps.get(name))
+                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                        .setOnSliderClickListener(this);
+
+                //add your extra information
+                textSliderView.bundle(new Bundle());
+                textSliderView.getBundle()
+                        .putString("extra",name);
+
+                mDemoSlider.addSlider(textSliderView);
+            }
+        } else {
+            HashMap<String,String> url_maps = new HashMap<String, String>();
+            url_maps.put("Changing Lives", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/d.jpg");
+            url_maps.put("Changing Communities", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/a.jpg");
+            url_maps.put("Access for All", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/c.jpg");
+            url_maps.put("Investing in Human Resources for Health ", "https://davidnyangiprojects.com/Projects/Android/CCBRT/Images/b.jpg");
+
+            for(String name : url_maps.keySet()){
+                TextSliderView textSliderView = new TextSliderView(getActivity());
+                // initialize a SliderLayout
+                textSliderView
+                        .description(name)
+                        .image(url_maps.get(name))
+                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                        .setOnSliderClickListener(this);
+
+                //add your extra information
+                textSliderView.bundle(new Bundle());
+                textSliderView.getBundle()
+                        .putString("extra",name);
+
+                mDemoSlider.addSlider(textSliderView);
+            }
         }
+
+
+
+
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         mDemoSlider.setCustomIndicator((PagerIndicator) view.findViewById(R.id.custom_indicator));
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Right_Top);

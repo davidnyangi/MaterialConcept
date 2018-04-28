@@ -81,9 +81,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     Homepage homeFragment = new Homepage();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
                 }else if (tabId == R.id.tab_news) {
-                   // fragNavController.switchTab(fragNavController.TAB1);
+                    News newsFragment = new News();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,newsFragment).commit();
                 }else if(tabId == R.id.tab_people){
-                   // fragNavController.switchTab(fragNavController.TAB3);
+                    People teamFragment = new People();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,teamFragment).commit();
                 }else if(tabId == R.id.tab_diary){
                   //  fragNavController.switchTab(fragNavController.TAB4);
                 }else if(tabId == R.id.tab_notifications){
