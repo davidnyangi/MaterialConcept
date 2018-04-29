@@ -76,7 +76,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
 
         viewHolder.title.setText(items.get(i).getTitle());
-        viewHolder.date.setText(convertTime(items.get(i).getDate()));
+        viewHolder.date.setText(items.get(i).getDate());
 
         Glide
             .with(context)
@@ -92,7 +92,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
                 Intent intent = new Intent(context, DetailNews.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("TITLE", items.get(i).getTitle());
-                bundle.putString("DATE", convertTime(items.get(i).getDate()));
+                bundle.putString("DATE", items.get(i).getDate());
 
                 bundle.putInt("ITEM", i);
                 viewHolder.image.buildDrawingCache();

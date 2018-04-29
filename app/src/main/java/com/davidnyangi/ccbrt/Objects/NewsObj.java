@@ -4,12 +4,12 @@ public class NewsObj {
 
     String title;
     int image;
-    long date;
+    String date;
 
     public NewsObj(){}
 
 
-    public NewsObj(String title, int image, long date){
+    public NewsObj(String title, int image, String date){
         this.title = title;
         this.image = image;
         this.date = date;
@@ -31,11 +31,11 @@ public class NewsObj {
         return image;
     }
 
-    public void setDate(long date){
+    public void setDate(String date){
         this.date = date;
     }
 
-    public long getDate(){
+    public String getDate(){
         return date;
     }
 }

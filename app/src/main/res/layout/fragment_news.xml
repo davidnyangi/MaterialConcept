@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/vr_millitar"/>
+                    android:src="@drawable/aa"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Viernes, 15 de Abril 2016"
+                        android:text="Friday, 27th April 2018"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="16dp"
                         android:layout_marginBottom="16dp"
@@ -48,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="El mejor juego VR Shooter del año."
+                        android:text="Filling the Human Resources for Health Gap"
                         android:textColor="@color/ghostWhite"
                         style="@style/Base.TextAppearance.AppCompat.Title"
                         android:id="@+id/textView2"

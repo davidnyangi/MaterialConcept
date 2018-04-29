@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.davidnyangi.ccbrt.Fragments.Activity;
+import com.davidnyangi.ccbrt.Fragments.Contacts;
 import com.davidnyangi.ccbrt.Fragments.Diary;
 import com.davidnyangi.ccbrt.Fragments.Homepage;
 import com.davidnyangi.ccbrt.Fragments.News;
@@ -72,7 +73,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         bottomBar.setDefaultTab(R.id.tab_home);
         fragNavController = new FragNavController(getSupportFragmentManager(), R.id.container,fragments);
         BottomBarTab nearby = bottomBar.getTabWithId(R.id.tab_notifications);
-        nearby.setBadgeCount(5);
+       // nearby.setBadgeCount(5);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -87,7 +88,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     People teamFragment = new People();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,teamFragment).commit();
                 }else if(tabId == R.id.tab_diary){
-                  //  fragNavController.switchTab(fragNavController.TAB4);
+                    Contacts contactsFragment = new Contacts();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,contactsFragment).commit();
                 }else if(tabId == R.id.tab_notifications){
                     SMS smsFragment = new SMS();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,smsFragment).commit();
@@ -150,5 +152,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed(){
+      //  getFragmentManager().popBackStackImmediate();
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }
     }
 }

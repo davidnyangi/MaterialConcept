@@ -71,4 +71,5 @@ public class People extends Fragment {
 
         return view;
     }
+
 }

@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="Viernes, 16 de Noviembre 2016" />
+            android:text="Friday, April 25 2018"/>
 
         <TextView
             android:id="@+id/title"
@@ -26,7 +26,7 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_below="@+id/date"
-            android:text="Viernes, 16 de Noviembre 2016" />
+            android:text="Friday, April 25 2018" />
 
         <TextView
             android:id="@+id/content"

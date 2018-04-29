@@ -59,8 +59,8 @@ public class News extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), DetailNews.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("TITLE", "El mejor juego VR Shooter del año.");
-                bundle.putString("DATE", "Viernes, 15 de Abril 2016");
+                bundle.putString("TITLE", "Filling the Human Resources for Health Gap");
+                bundle.putString("DATE", "Friday, 27th April 2016");
 
                 bundle.putInt("ITEM", 6);
                 intent.putExtras(bundle);
@@ -73,15 +73,16 @@ public class News extends Fragment {
         lManager = new LinearLayoutManager(getActivity());
         recycler.setNestedScrollingEnabled(false);
         recycler.setLayoutManager(lManager);
+
         items = new ArrayList<>();
 
         // String title, int image, long date
-        items.add(new NewsObj("El Manuscrito Voynich, el enigmático libro que nadie puede leer, sale a la venta", R.drawable.manuscrito_voynich, 1478044800));
-        items.add(new NewsObj("La NASA llevó a cabo un evento de Facebook en vivo hoy para mostrar su robot humanoide", R.drawable.robonaut, 1475539200));
-        items.add(new NewsObj("Hezbolá causa polémica con el desfile militar en Siria", R.drawable.syria, 1444003200));
-        items.add(new NewsObj("Trump nombró a un senador racista como ministro de Justicia", R.drawable.trump, 1476057600));
-        items.add(new NewsObj("Mercedes y Red Bull pueden ser un peligro en 2017", R.drawable.f1, 1477958400));
-        items.add(new NewsObj("TECH Google Assistant y Google Now ¿Son lo mismo?", R.drawable.google_nw, 1477699200));
+        items.add(new NewsObj("World Malaria Day: Malaria and Disability", R.drawable.bb, "Wednesday, April 25 2018"));
+        items.add(new NewsObj("Investing in HRH: Meet Doris, Evelyn & Elizabeth", R.drawable.cc, "Saturday, April 21 2018"));
+        items.add(new NewsObj("What’s New at CCBRT: Digital X-Rays", R.drawable.dd, "Wednesday, April 18 2018"));
+        items.add(new NewsObj("CCBRT Academy: Coming Soon", R.drawable.ee, "Friday, April 13 2018"));
+        items.add(new NewsObj("Dr James & Dr Peter: HR for Fistula Care", R.drawable.ff, "Wednesday, April 11 2018"));
+        items.add(new NewsObj("World Health Workers Week: Meet Ladness", R.drawable.gg, "Friday, April 06 2018"));
 
         adapter = new NewsAdapter(items, getContext());
         recycler.setAdapter(adapter);

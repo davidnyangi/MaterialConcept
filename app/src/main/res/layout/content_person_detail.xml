@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.davidnyangi.ccbrt.PersonDetail"
     tools:showIn="@layout/activity_person_detail"
     android:layout_marginRight="10dp"
+    android:layout_gravity="fill_vertical"
     android:layout_marginTop="-60dp"
+    android:layout_marginBottom="0dp"
     android:layout_marginLeft="10dp"
     android:elevation="1dp">
 
@@ -32,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="INFORMACIÓN"
+                    android:text="CONTACT INFO"
                     android:textColor="@color/colorAccent"
                     style="@style/TextAppearance.AppCompat.Inverse"
                     android:id="@+id/textView3" />
@@ -101,7 +103,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ACERCA DE"
+                    android:text="WHAT I DO"
                     android:textColor="@color/colorAccent"
                     style="@style/TextAppearance.AppCompat.Inverse"
                     android:id="@+id/about" />

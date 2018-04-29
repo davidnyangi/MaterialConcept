@@ -4,36 +4,40 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/cast_ic_expanded_controller_play"
-            android:title="Mwanzo/Nyimbo Zote" />
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home"/>
         <item
             android:id="@+id/shukrani"
-            android:icon="@drawable/cast_ic_expanded_controller_play"
-            android:title="Shukrani" />
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="About Us" />
         <item
             android:id="@+id/yaliyomo"
-            android:icon="@drawable/cast_ic_expanded_controller_play"
-            android:title="Yaliyomo" />
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="History" />
         <item
             android:id="@+id/maoni"
-            android:icon="@drawable/cast_ic_expanded_controller_play"
-            android:title="Maoni" />
+            android:icon="@drawable/ic_cast_dark"
+            android:title="Mission and Vision" />
     </group>
 
-    <item android:title="Mengineyo">
+    <item android:title="Others">
         <menu>
             <item
                 android:id="@+id/kuhusu"
                 android:icon="@drawable/ic_info_black_24dp"
-                android:title="Kuhusu" />
+                android:title="Our Partners" />
             <item
                 android:id="@+id/mawasiliano"
                 android:icon="@drawable/cast_ic_expanded_controller_play"
-                android:title="Mawasiliano" />
+                android:title="Resources" />
+            <item
+                android:id="@+id/mawsasiliano"
+                android:icon="@drawable/ic_action_whatch"
+                android:title="Settings" />
             <item
                 android:id="@+id/funga"
-                android:icon="@drawable/cast_ic_expanded_controller_play"
-                android:title="Funga/Ondoka" />
+                android:icon="@drawable/ic_lock_outline_black_24dp"
+                android:title="Logout" />
         </menu>
     </item>
 </menu>

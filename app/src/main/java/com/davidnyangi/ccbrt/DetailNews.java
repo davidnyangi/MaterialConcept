@@ -22,13 +22,13 @@ public class DetailNews extends AppCompatActivity {
 
 
     int[] images = {
-            R.drawable.manuscrito_voynich,
-            R.drawable.robonaut,
-            R.drawable.syria,
-            R.drawable.trump,
-            R.drawable.f1,
-            R.drawable.google_nw,
-            R.drawable.vr_millitar
+            R.drawable.aa,
+            R.drawable.bb,
+            R.drawable.cc,
+            R.drawable.dd,
+            R.drawable.ee,
+            R.drawable.ff,
+            R.drawable.gg
 
     };
 
